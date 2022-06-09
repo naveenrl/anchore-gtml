@@ -12,10 +12,10 @@ jobs:
         image-reference: "testrepo/testimage:latest"
         dockerfile-path: "./Dockerfile"
         fail-build: false
-    - name: install json-to-html
+    - name: install anchore-to-html
       run: | 
-         npm install json-to-html -g
-         json test --json | json-to-html -o result.html
+         npm install anchore-to-html -g
+         anchore test --json | anchore-to-html -o result.html
          mkdir downloads
          pwd
          cp -v /home/runner/*/*/*/*.html /home/runner/work/*/*/downloads
